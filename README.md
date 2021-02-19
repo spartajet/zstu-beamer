@@ -20,11 +20,25 @@
   - 方式二：`./build.sh main` (Linux 或 Mac)
 * 在线使用 (无需安装 TeX 环境但需要连接至互联网)
   1. 下载此模板压缩包并上传至 Overleaf 的 Project
-    - 模板 \[[下载](https://github.com/icgw/ucas-beamer/releases)\]
+    - 模板 \[[下载](https://github.com/spartajet/zstu-beamer.git/releases)\]
     - `New Project` - `Upload Project` - `Select a .zip file`
   2. 编译方式选为 `XeLaTeX`
     - `Menu` - `Settings` - `Compiler` - `XeLaTeX`
     - `Recompile`
+
+## 展示
+
+![](pic/main_页面_01.jpg)
+![](pic/main_页面_02.jpg)
+![](pic/main_页面_03.jpg)
+![](pic/main_页面_04.jpg)
+![](pic/main_页面_05.jpg)
+![](pic/main_页面_06.jpg)
+![](pic/main_页面_07.jpg)
+![](pic/main_页面_08.jpg)
+![](pic/main_页面_09.jpg)
+![](pic/main_页面_10.jpg)
+![](pic/main_页面_11.jpg)
 
 ## 许可说明
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
