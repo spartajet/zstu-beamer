@@ -73,7 +73,7 @@
 \setlength{\zstubeamerlogoheight}{20pt}
 
 % --------------------------------- 预设颜色 --------------------------------- %
-\definecolor{zstubeamer@base}{RGB}{0, 64, 152} % 底色：孔雀蓝
+\definecolor{zstubeamer@base}{RGB}{43, 87, 154} % 底色：孔雀蓝
 \definecolor{zstubeamer@graybase}{RGB}{240, 240, 240}
 \definecolor{zstubeamer@gray}{RGB}{130, 130, 130}
 \definecolor{zstubeamer@orange}{RGB}{240, 140, 0}
@@ -125,23 +125,44 @@
 }
 
 % 设置页脚的信息（姓名、题目、日期、页码）
+% \setbeamertemplate{footline}{%
+%   \hskip\zstubeamermargin%
+%   \usebeamercolor[fg]{author in head/foot}%
+%     \usebeamerfont{author in head/foot}\insertshortauthor%
+%     \lower2pt\hbox{\Large$\cdot$}
+%   \hfill
+%   \usebeamercolor[fg]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\insertshorttitle%
+%     \lower2pt\hbox{\Large$\cdot$}
+%   \hfill
+%     \usebeamercolor[fg]{date in head/foot}%
+%     \usebeamerfont{date in head/foot}\insertshortdate%
+%   \hfill
+%   \insertframenumber{} / \inserttotalframenumber%
+%   \hskip\zstubeamermargin%
+%   \vrule width 0pt height \zstubeamerfootlineheight%
+%          depth \zstubeamerfootlinebottompadding
+% }
+% \setbeamercolor{title in head/foot}{fg=white, bg=zstubeamer@base}
+
 \setbeamertemplate{footline}{%
-  \hskip\zstubeamermargin%
-  \usebeamercolor[fg]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor%
-    \lower2pt\hbox{\Large$\cdot$}
-  \hfill
-  \usebeamercolor[fg]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle%
-    \lower2pt\hbox{\Large$\cdot$}
-  \hfill
-    \usebeamercolor[fg]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate%
-  \hfill
-  \insertframenumber{} / \inserttotalframenumber%
-  \hskip\zstubeamermargin%
-  \vrule width 0pt height \zstubeamerfootlineheight%
-         depth \zstubeamerfootlinebottompadding
+  \textcolor{zstubeamer@base}{\rule{\paperwidth}{0.4ex}}
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.335\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+     \usebeamerfont{author in head/foot}{浙江理工大学$\cdot$机械与自动控制学院}
+    \end{beamercolorbox}%
+     \begin{beamercolorbox}[wd=0.065\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}%
+  
+  \vskip0pt%
 }
 
 % 设置扉页
