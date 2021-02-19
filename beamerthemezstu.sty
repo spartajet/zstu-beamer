@@ -150,8 +150,8 @@
 % 设置顶边导航栏
 \setbeamertemplate{headline}{
   \@tempdimb=6.4375ex%
-
-  \leavevmode%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=\@tempdimb]{headlinecolor}%{section in head/foot} % {section in head/foot}是用来设置颜色的
+    \leavevmode%
   \hbox{%
     \begin{beamercolorbox}[wd=.85\paperwidth,ht=\@tempdimb]{headlinecolor}%{section in head/foot} % {section in head/foot}是用来设置颜色的
       \vbox to\@tempdimb{\vfil\insertsectionnavigationhorizontal{.5\textwidth}{\hskip0pt plus1filll}{}\vfil}%
@@ -165,6 +165,8 @@
     ]{logo/WORD.pdf}%
     \end{beamercolorbox}%
   }%
+  \end{beamercolorbox}%
+  
 }
 
 % 设置页脚的信息（姓名、题目、日期、页码）
