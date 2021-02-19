@@ -1,4 +1,4 @@
- # ZSTU Beamer  
+ # ZSTU Beamer  浙江理工大学Beamer非官方模板
  
  **此PPT模板实在UCAS的模板基础上修改的，特别感谢 [UCAS Beamer](https://github.com/icgw/ucas-beamer) ，仅针对浙江理工大学修改。**
 
