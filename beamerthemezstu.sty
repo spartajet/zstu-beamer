@@ -22,7 +22,7 @@
 % 设置字体
 \usefonttheme{professionalfonts}% 数学公式字体
 
-\ProcessOptionsBeamer%
+\ProcessOptionsBeamer
 
 % 定义主形象标志 (logo) 和 子形象标识 (sublogo) 的文件夹路径
 \def\zstubeamer@pathname@logo{logo/}
@@ -86,7 +86,8 @@
 
 % -------------------------------- 自定义设置 -------------------------------- %
 % 使用页眉（章节题目）
-\useoutertheme{infolines}
+\useoutertheme{split}
+% \useinnertheme{rounded}
 % 设置 \pause 之后的内容从半透明到完全显示的动态变化
 \setbeamercovered{dynamic}
 % 设置页码边距
@@ -95,33 +96,56 @@
   text margin right=\zstubeamermargin}
 
 % 设置展示页面的标题与副标题
-\setbeamertemplate{frametitle}{%
-  \vspace{\zstubeamertoppadding}
-  \vtop{
-    {%
-    \usebeamerfont{frametitle}{\insertframetitle}%
-    \ifx\insertframesubtitle\empty\else\\
-      \usebeamerfont{framesubtitle}{\insertframesubtitle}
-    \fi}
-    \vfill
-  }
-}
+% \setbeamertemplate{frametitle}{%
+%   \vspace{\zstubeamertoppadding}
+%   \vtop{
+%     {%
+%     \usebeamerfont{frametitle}{\insertframetitle}%
+%     \ifx\insertframesubtitle\empty\else\\
+%       \usebeamerfont{framesubtitle}{\insertframesubtitle}
+%     \fi}
+%     \vfill
+%   }
+% }
 
 % 取消底部的导航栏
 % \setbeamertemplate{navigation symbols}{}
 
 % 设置背景
 \setbeamertemplate{background canvas}{%
-  \ifnum\value{page}=1
-    \let\zstubeamertemplength\zstubeamerlogoheighttitlepage%
-  \else
-    \let\zstubeamertemplength\zstubeamerlogoheight%
-  \fi
+  % \ifnum\value{page}=1
+  %   \let\zstubeamertemplength\zstubeamerlogoheighttitlepage%
+  % \else
+  %   \let\zstubeamertemplength\zstubeamerlogoheight%
+  % \fi
  
-    % \leavevmode\hskip\zstubeamermargin%
-    \leavevmode\hskip\zstubeamermargin
-    \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
+  %   % \leavevmode\hskip\zstubeamermargin%
+  %   \leavevmode\hskip\zstubeamermargin
+  %   \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
   
+}
+
+% \setbeamercolor{section navigation symbols dimmed}{fg=red!80!black}
+\setbeamercolor{section in head/foot}{fg=white}
+\setbeamercolor{headlinecolor}{fg=white, bg=zstubeamer@base}
+% 设置顶边导航栏
+\setbeamertemplate{headline}{
+  \@tempdimb=6.4375ex%
+
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.85\paperwidth,ht=\@tempdimb]{headlinecolor}%{section in head/foot} % {section in head/foot}是用来设置颜色的
+      \vbox to\@tempdimb{\vfil\insertsectionnavigationhorizontal{.5\textwidth}{\hskip0pt plus1filll}{}\vfil}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.18\paperwidth,ht=\@tempdimb]{headlinecolor}%{section in head/foot} % {section in head/foot}是用来设置颜色的
+      \includegraphics%
+    [
+      width=.18\textwidth,
+      height=6ex,
+      keepaspectratio
+    ]{logo/WORD.pdf}%
+    \end{beamercolorbox}%
+  }%
 }
 
 % 设置页脚的信息（姓名、题目、日期、页码）
