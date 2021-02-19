@@ -7,7 +7,8 @@
 \ExecuteOptionsBeamer{logo=ZSTU}
 
 \RequirePackage{booktabs}
-
+\RequirePackage{setspace,xeCJK}
+\renewcommand{\baselinestretch}{1.2}
 % 无标号的脚注
 \newcommand\blfootnote[1]{%
   \begingroup
@@ -234,6 +235,11 @@
     {\usebeamerfont{date}\centering \insertdate}%
   \end{center}
 }
+
+\setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi]{微软雅黑}
+\setsansfont{Times New Roman}%这个是用来设置正文中的英语使用Times New Roman的
+% \setCJKsansfont[BoldFont=STHeiti]{STXihei}
+% \setCJKmonofont{STFangsong}
 
 % 设置结构 (structure) 的字体及前景颜色
 \setbeamerfont{structure}{series=\bfseries}
