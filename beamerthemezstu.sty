@@ -112,16 +112,35 @@
 % \setbeamertemplate{navigation symbols}{}
 
 % 设置背景
-\setbeamertemplate{background canvas}{%
-  % \ifnum\value{page}=1
-  %   \let\zstubeamertemplength\zstubeamerlogoheighttitlepage%
-  % \else
-  %   \let\zstubeamertemplength\zstubeamerlogoheight%
-  % \fi
+\setbeamertemplate{background}{%
+  \ifnum\value{page}=1
+    \let\zstubeamertemplength\zstubeamerlogoheighttitlepage%
+    \leavevmode\hskip\zstubeamermargin
+    \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
+  \else
+    \ifodd\value{page}
+      \includegraphics%
+      [
+        width=\paperwidth,
+        height=\paperheight,
+        keepaspectratio
+      ]{logo/backageroud-left.pdf}%
+    \else
+      \includegraphics%
+      [
+        width=\paperwidth,
+        height=\paperheight,
+        keepaspectratio
+      ]{logo/backageroud-right.pdf}%
+    \fi
+    
+    
+    
+    
+  \fi
  
-  %   % \leavevmode\hskip\zstubeamermargin%
-  %   \leavevmode\hskip\zstubeamermargin
-  %   \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
+    % \leavevmode\hskip\zstubeamermargin%
+    
   
 }
 
