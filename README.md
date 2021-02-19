@@ -1,13 +1,11 @@
- # 此PPT模板抄袭了 https://github.com/icgw/ucas-beamer 的模板，特别感谢，针对浙江理工大学修改
+ # ZSTU Beamer  
+ 
+ **此PPT模板实在UCAS的模板基础上修改的，特别感谢 [UCAS Beamer](https://github.com/icgw/ucas-beamer) ，仅针对浙江理工大学修改。**
 
-
-# `UCAS Beamer` (LaTeX)
-![UCAS Beamer][UCAS Beamer Gif]
 
 ## 简介
-* 简洁、优雅、严肃的 Beamer (LaTeX) 中文模板，供中国科学院大学本科生、硕士生、博士生、等科研工作者学习使用。如果你有任何疑问，无需犹豫，通过 [E-mail](mailto:icgw@outlook.com) 联系我。
-* 查看 \[[样例](https://github.com/icgw/ucas-beamer/releases/download/v1.2/template-zh.pdf)\] \[[下载](https://github.com/icgw/ucas-beamer/archive/zh-CN.zip)\]
-* 此外，如果你想要 PowerPoint 模版，推荐使用 \[[中国科学院大学官方提供的 PowerPoint 模板][UCAS PPT template Page]\] \[[下载][UCAS PPT template download link]\]
+* 简洁、优雅、严肃的 Beamer (LaTeX) 中文模板，供浙江理工大学大学本科生、硕士生、博士生、等科研工作者学习使用。如果你有任何疑问，无需犹豫，通过 [E-mail](mailto:guoxiaozhong1990@outlook.com) 联系我。
+
 
 ## 安装 TeX Live
 * [官方安装](https://www.tug.org/texlive/)
@@ -30,7 +28,3 @@
 
 ## 许可说明
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
-
-[UCAS PPT template Page]: http://onestop.ucas.edu.cn/Home/Info/e1e7b553-14c1-42f3-910a-88d25ebf9c48
-[UCAS PPT template download link]: http://onestop.ucas.edu.cn/Content/Upload/2019/4/2.zip
-[UCAS Beamer Gif]: https://raw.githubusercontent.com/icgw/ucas-beamer/zh-CN/.github/example.gif
