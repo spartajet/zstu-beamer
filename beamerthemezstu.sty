@@ -48,10 +48,10 @@
 
 % 定义页脚占据的高度
 \newlength{\zstubeamerfootlineheight}
-\setlength{\zstubeamerfootlineheight}{8pt}
+\setlength{\zstubeamerfootlineheight}{6pt}
 % 定义页脚与底边界的距离
 \newlength{\zstubeamerfootlinebottompadding}
-\setlength{\zstubeamerfootlinebottompadding}{6pt}
+\setlength{\zstubeamerfootlinebottompadding}{3pt}
 
 % 定义主形象标志的最大宽度
 \newlength{\zstubeamersublogomaxwidth}
@@ -108,7 +108,7 @@
 }
 
 % 取消底部的导航栏
-\setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{navigation symbols}{}
 
 % 设置背景
 \setbeamertemplate{background canvas}{%
@@ -117,9 +117,11 @@
   \else
     \let\zstubeamertemplength\zstubeamerlogoheight%
   \fi
+ 
+    % \leavevmode\hskip\zstubeamermargin%
+    \leavevmode\hskip\zstubeamermargin
+    \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
   
-  \leavevmode\hskip\zstubeamermargin%
-  \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
 }
 
 % 设置页脚的信息（姓名、题目、日期、页码）
@@ -128,16 +130,19 @@
   \usebeamercolor[fg]{author in head/foot}%
     \usebeamerfont{author in head/foot}\insertshortauthor%
     \lower2pt\hbox{\Large$\cdot$}
+  \hfill
   \usebeamercolor[fg]{title in head/foot}%
     \usebeamerfont{title in head/foot}\insertshorttitle%
     \lower2pt\hbox{\Large$\cdot$}
-  \usebeamercolor[fg]{date in head/foot}%
+  \hfill
+    \usebeamercolor[fg]{date in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate%
   \hfill
   \insertframenumber{} / \inserttotalframenumber%
   \hskip\zstubeamermargin%
   \vrule width 0pt height \zstubeamerfootlineheight%
-         depth \zstubeamerfootlinebottompadding}
+         depth \zstubeamerfootlinebottompadding
+}
 
 % 设置扉页
 \setbeamertemplate{title page}{%
