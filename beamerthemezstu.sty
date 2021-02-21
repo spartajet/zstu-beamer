@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemezstu}[2020/07/13]
+\ProvidesPackage{beamerthemezstu}[2021/02/19]
 
 \mode<presentation>
 
@@ -84,10 +84,10 @@
 
 % -------------------------------- 自定义设置 -------------------------------- %
 % 使用页眉（章节题目）
-\useoutertheme{split}
+\useoutertheme{default}
 % \useinnertheme{rounded}
 % 设置 \pause 之后的内容从半透明到完全显示的动态变化
-\setbeamercovered{dynamic}
+\setbeamercovered{transparent=5}
 % 设置页码边距
 \setbeamersize{%
   text margin left=\zstubeamermargin,
@@ -116,7 +116,7 @@
     \leavevmode\hskip\zstubeamermargin
     \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
   \else
-    \ifodd\value{page}
+    \ifodd\value{framenumber}
       \includegraphics%
       [
         width=\paperwidth,
@@ -250,7 +250,7 @@
 \setbeamercolor{alerted text}{fg=zstubeamer@orange}
 
 % 设置题目 (title) 的字体、大小及颜色
-\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{title}{size=\Huge, series=\bfseries}
 \setbeamercolor{title}{fg=zstubeamer@base}
 \setbeamerfont{title in head/foot}{size=\tiny, series=\bfseries}
 \setbeamercolor{title in head/foot}{parent=structure}
@@ -261,7 +261,7 @@
 \setbeamercolor{author in head/foot}{parent=structure}
 
 % 设置日期的字体大小
-\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{date}{size=\small}
 \setbeamerfont{date in head/foot}{size=\tiny, series=\bfseries}
 \setbeamercolor{date in head/foot}{parent=structure}
 
@@ -273,11 +273,11 @@
 \setbeamertemplate{itemize subsubitem}[circle]
 
 % 设置 脚注 (footnote) 的字体大小、脚注的标号属性
-\setbeamerfont{footnote}{size=\footnotesize}
+\setbeamerfont{footnote}{size=\small}
 \setbeamercolor{footnote mark}{parent=structure}
 
 % 设置幻灯片标题、副标题、章节、子章节的字体及大小
-\setbeamerfont{frametitle}{size=\normalsize, series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
 \setbeamercolor{frametitle}{parent=title}
 
 \setbeamerfont{framesubtitle}{size=\large, series=\bfseries}
