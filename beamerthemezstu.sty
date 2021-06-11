@@ -7,7 +7,7 @@
 \ExecuteOptionsBeamer{logo=ZSTU}
 
 \RequirePackage{booktabs}
-\RequirePackage{setspace,xeCJK}
+\RequirePackage{setspace,xeCJK,listings,xcolor,fontspec,etoolbox,color,minted,pygments}
 \renewcommand{\baselinestretch}{1.2}
 % 无标号的脚注
 \newcommand\blfootnote[1]{%
@@ -109,6 +109,11 @@
 % 取消底部的导航栏
 % \setbeamertemplate{navigation symbols}{}
 
+\setbeamertemplate{frametitle}
+{
+    \insertframetitle
+}
+
 % 设置背景
 \setbeamertemplate{background}{%
   \ifnum\value{page}=1
@@ -131,15 +136,9 @@
         keepaspectratio
       ]{logo/backageroud-right.pdf}%
     \fi
-    
-    
-    
-    
   \fi
  
     % \leavevmode\hskip\zstubeamermargin%
-    
-  
 }
 
 % \setbeamercolor{section navigation symbols dimmed}{fg=red!80!black}
@@ -318,6 +317,49 @@
   parent=normal text, use=block title alerted,
   bg=block title alerted.bg!10!bg}
 
+  \definecolor{base0}{RGB}{131,148,150}
+  \definecolor{base01}{RGB}{88,110,117}
+  \definecolor{base2}{RGB}{238,232,213}
+  \definecolor{sgreen}{RGB}{133,153,0}
+  \definecolor{sblue}{RGB}{38,138,210}
+  \definecolor{scyan}{RGB}{42,161,151}
+  \definecolor{smagenta}{RGB}{211,54,130}
+  
+  
+  \newcommand\digitstyle{\color{smagenta}}
+  \newcommand\symbolstyle{\color{base01}}
+  \makeatletter
+  \newcommand{\ProcessDigit}[1]
+  {%
+    \ifnum\lst@mode=\lst@Pmode\relax%
+     {\digitstyle #1}%
+    \else
+      #1%
+    \fi
+  }
+  \makeatother
+  
+% minted 设置
+\usemintedstyle{friendly}
+
+\newminted[CSharpCode]{csharp}{mathescape,
+linenos,breaklines=true,
+numbersep=5pt,
+autogobble=true,
+frame=lines,
+framesep=2mm,
+fontsize=\small,
+bgcolor=white}
+
+\newcommand{\codefile}[3]{\inputminted[mathescape,
+linenos,breaklines=true,
+numbersep=5pt,
+autogobble=true,
+frame=lines,
+framesep=2mm,
+fontsize=\small,
+bgcolor=white][#1]{#2}{#3}}
+
 % 设置参考文献显示书本、网络、文章的标志
 \setbeamertemplate{bibliography item}{%
   \ifboolexpr{test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
@@ -331,3 +373,5 @@
 
 \mode<all>
 \endinput
+
+

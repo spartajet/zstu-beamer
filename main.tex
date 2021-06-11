@@ -21,6 +21,8 @@
 \usepackage[backend=biber, style=gb7714-2015]{biblatex}
 \addbibresource{ref.bib}
 
+\usepackage{minted,pygments}
+
 \title[浙江理工大学Beamer模板]{浙江理工大学 Beamer (\LaTeX{})}
 \subtitle[非官方]{非官方的模版}
 \author[郭晓忠]{\href{mailto:guoxiaozhong@zstu.edu.cn}{郭晓忠}}
@@ -49,23 +51,23 @@
   平凡格式\quad\structure{浅灰格式}\quad\alert{强调格式}
   \begin{itemize}
     \item 第一级文本内容
-    \item 若该行文本内容十分长长长长长长长长长则会被强制换行
-      这里也可以包含\alert{需要强调的文本}
-      \begin{itemize}
-        \item 第二级文本内容
+    \item 若该行文本内容
+          这里也可以包含\alert{需要强调的文本}
           \begin{itemize}
-            \item 第三级文本内容
+            \item 第二级文本内容
+                  \begin{itemize}
+                    \item 第三级文本内容
+                  \end{itemize}
+                  \alert{\item 第二级强调的文本内容}
           \end{itemize}
-          \alert{\item 第二级强调的文本内容}
-      \end{itemize}
   \end{itemize}
   \pause% 动态展示以下内容
   \begin{enumerate}
     \item 带序号的文本内容
-      \begin{enumerate}
-        \item 第二级文本内容且包含数学公式
-          \[\int^{\infty}_{-\infty}e^{-x^2}dx = \sqrt{\pi}\]
-      \end{enumerate}
+          \begin{enumerate}
+            \item 第二级文本内容且包含数学公式
+                  \[\int^{\infty}_{-\infty}e^{-x^2}dx = \sqrt{\pi}\]
+          \end{enumerate}
   \end{enumerate}
 \end{frame}
 
@@ -89,6 +91,33 @@
     \green{绿色}
   \end{alertblock}
   脚注\footnote{\url{https://github.com/icgw/ucas-beamer}}
+\end{frame}
+
+\begin{frame}[t,fragile]
+  \frametitle{代码}
+  \begin{CSharpCode}
+    for (int i = 0; i < this.RowCount; i++)
+    {
+        for (int j = 0; j < this.ColumnsCount; j++)
+        {
+            Mat tempMat = Cv2.ImRead(this.FileNames[i], ImreadModes.AnyDepth);
+            if (tempMat.Type() != MatType.CV_16UC1)
+            {
+                MessageBox.Show(this, "图像尺寸不正确", "提示", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            Mat rect = result[new OpenCvSharp.Rect(width * j, height*i, width, height)];
+            tempMat.CopyTo(rect);
+        }
+\end{CSharpCode}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{代码}
+
+  \inputminted[firstline=2,lastline=15]{csharp}{E://CSharp//ImageWiter//ImageWiter//MainWindow.xaml.cs}
+
 \end{frame}
 
 % \begin{frame}[t]
