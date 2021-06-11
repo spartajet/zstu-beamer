@@ -7,7 +7,7 @@
 \ExecuteOptionsBeamer{logo=ZSTU}
 
 \RequirePackage{booktabs}
-\RequirePackage{setspace,xeCJK,listings,xcolor,fontspec,etoolbox,color,minted,pygments}
+\RequirePackage{setspace,xeCJK,listings,xcolor,fontspec,etoolbox,color,minted,pygments,adjustbox}
 \renewcommand{\baselinestretch}{1.2}
 % 无标号的脚注
 \newcommand\blfootnote[1]{%
@@ -40,6 +40,12 @@
 % 定义边界间隔距离
 \newlength{\zstubeamermargin}
 \setlength{\zstubeamermargin}{14pt}
+
+\newlength{\zstubeamerbackgroundvskip}
+\setlength{\zstubeamerbackgroundvskip}{.43\paperheight}
+
+\newlength{\zstubeamerbackgroundhskip}
+\setlength{\zstubeamerbackgroundhskip}{\paperwidth-50pt}
 
 \newlength{\zstubeamertopmargin}
 \setlength{\zstubeamertopmargin}{5pt}
@@ -121,21 +127,38 @@
     \leavevmode\hskip\zstubeamermargin
     \includegraphics[height=\zstubeamertemplength,scale=0.5]{\zstubeamerfilenamelogo}
   \else
-    \ifodd\value{framenumber}
-      \includegraphics%
+    % \vspace*{3cm}\\
+    % \begin{picture}(.4\paperwidth,.4\paperheight)(\zstubeamerbackgroundhskip,\zstubeamerbackgroundvskip)
+    % \leavevmode\hskip\zstubeamerbackgroundhskip
+    \begin{picture}(.5\paperwidth,.5\paperheight)(-\zstubeamerbackgroundhskip,\zstubeamerbackgroundvskip)
+      \includegraphics
       [
-        width=\paperwidth,
-        height=\paperheight,
+        width=50pt,
+        height=50pt,
         keepaspectratio
-      ]{logo/backageroud-left.pdf}%
-    \else
-      \includegraphics%
-      [
-        width=\paperwidth,
-        height=\paperheight,
-        keepaspectratio
-      ]{logo/backageroud-right.pdf}%
-    \fi
+      ]{logo/watermark.pdf}%
+    \end{picture}
+    % \includegraphics
+    % [
+    %   width=.4\paperwidth,
+    %   height=.4\paperheight,
+    %   keepaspectratio
+    % ]{logo/watermark.pdf}%
+    % \ifodd\value{framenumber}
+    %   \includegraphics%
+    %   [
+    %     width=\paperwidth,
+    %     height=\paperheight,
+    %     keepaspectratio
+    %   ]{logo/backageroud-left.pdf}%
+    % \else
+    %   \includegraphics%
+    %   [
+    %     width=\paperwidth,
+    %     height=\paperheight,
+    %     keepaspectratio
+    %   ]{logo/backageroud-right.pdf}%
+    % \fi
   \fi
  
     % \leavevmode\hskip\zstubeamermargin%
